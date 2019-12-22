@@ -45,14 +45,15 @@ export class Header {
     }
 
     public get tocWithOrder(): string {
-        return this.orderArray.join('.') + ". " + this.tocWithoutOrder;
+        // console.log(this.orderArray)
+        return (this.orderArray.length == 0 ? "" : (this.orderArray.join('.') + ". ")) + this.tocWithoutOrder;
     }
 
-    public get fullHeaderWithOrder():string {
+    public get fullHeaderWithOrder(): string {
         return this.headerMark + " " + this.tocWithOrder;
     }
 
-    public get fullHeaderWithoutOrder():string{
+    public get fullHeaderWithoutOrder(): string {
         return this.headerMark + " " + this.tocWithoutOrder;
     }
 

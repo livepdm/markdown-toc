@@ -44,7 +44,7 @@ export class HeaderManager {
 
                 if (header.isHeader) {
                     header.orderArray = this.calculateHeaderOrder(header, headerList);
-                    header.orderedListString = header.orderArray.join('.') + ".";
+                    header.orderedListString = header.orderArray.length == 0 ? "" : header.orderArray.join('.') + ".";
                     header.range = new Range(index, 0, index, lineText.length);
 
                     if (header.depth <= this.configManager.options.DEPTH_TO.value) {
@@ -95,11 +95,16 @@ export class HeaderManager {
     }
 
     public calculateHeaderOrder(headerBeforePushToList: Header, headerList: Header[]) {
-
+        //because we only allow one H1 tag in an article. so all order will start at h2.
+        if (headerBeforePushToList.depth <= 1) {
+            return [];
+        }
+        // order start at header level 2.
+        let orderArrayLength = headerBeforePushToList.depth - 1;
         if (headerList.length == 0) {
             // special case: First header
-            let orderArray = new Array(headerBeforePushToList.depth);
-            orderArray[headerBeforePushToList.depth - 1] = 1;
+            let orderArray = new Array(orderArrayLength);
+            orderArray[orderArrayLength - 1] = 1;
             return orderArray;
         }
 
@@ -111,6 +116,7 @@ export class HeaderManager {
             let previousheader = undefined;
 
             for (let index = headerList.length - 1; index >= 0; index--) {
+                //same header depth.
                 if (headerList[index].depth == headerBeforePushToList.depth) {
                     previousheader = headerList[index];
                     break;
@@ -124,22 +130,18 @@ export class HeaderManager {
                 return orderArray;
             } else {
                 // special case: first header has greater level than second header
-                let orderArray = new Array(headerBeforePushToList.depth);
-                orderArray[headerBeforePushToList.depth - 1] = 1;
+                let orderArray = new Array(orderArrayLength);
+                orderArray[orderArrayLength - 1] = 1;
                 return orderArray;
             }
-        }
-
-        if (headerBeforePushToList.depth > lastheaderInList.depth) {
+        } else if (headerBeforePushToList.depth > lastheaderInList.depth) {
             // child level of previous
             // order start with 1
             let orderArray = Object.assign([], lastheaderInList.orderArray);
             orderArray.push(1);
 
             return orderArray;
-        }
-
-        if (headerBeforePushToList.depth == lastheaderInList.depth) {
+        } else if (headerBeforePushToList.depth == lastheaderInList.depth) {
             // the same level, increase last item in orderArray
             let orderArray = Object.assign([], lastheaderInList.orderArray);
             orderArray[orderArray.length - 1]++;

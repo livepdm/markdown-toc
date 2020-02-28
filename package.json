@@ -106,7 +106,7 @@
                 },
                 "markdown-toc.withLinks": {
                     "type": "boolean",
-                    "default": false,
+                    "default": true,
                     "description": "Auto insert link."
                 },
                 "markdown-toc.orderedList": {

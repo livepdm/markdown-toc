@@ -1,29 +1,29 @@
 {
-    "name": "auto-markdown-toc",
-    "displayName": "Auto Markdown TOC",
+    "name": "auto-markdown-toc-ax1",
+    "displayName": "Auto Markdown TOC By AX1",
     "description": "Markdown TOC (Table Of Contents) Plugin for Visual Studio Code.",
-    "version": "3.0.3",
+    "version": "1.0.0",
     "preview": true,
     "icon": "img/markdown-toc.png",
     "license": "MIT",
     "author": {
-        "email": "hunter.tran.92@gmail.com",
-        "name": "Hunter Tran",
-        "url": "https://coding4food.net/"
+        "email": "alex@livepdm.com",
+        "name": "Alex XIAO",
+        "url": "https://www.livepdm.com"
     },
     "bugs": {
-        "url": "https://github.com/huntertran/markdown-toc/issues"
+        "url": "https://github.com/livepdm/markdown-toc/issues"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/huntertran/markdown-toc.git"
+        "url": "https://github.com/livepdm/markdown-toc.git"
     },
     "keywords": [
         "markdown",
         "toc"
     ],
-    "homepage": "https://github.com/huntertran/markdown-toc",
-    "publisher": "huntertran",
+    "homepage": "https://github.com/livepdm/markdown-toc",
+    "publisher": "livepdm",
     "engines": {
         "vscode": "^1.34.0"
     },
@@ -91,12 +91,12 @@
             "properties": {
                 "markdown-toc.depthFrom": {
                     "type": "number",
-                    "default": 1,
-                    "description": "Depth control [1-6]."
+                    "default": 2,
+                    "description": "Depth control [2-6]. suggest you do not change this. because we always no need to do so."
                 },
                 "markdown-toc.depthTo": {
                     "type": "number",
-                    "default": 6,
+                    "default": 5,
                     "description": "Depth control [1-6]."
                 },
                 "markdown-toc.insertAnchor": {
@@ -106,12 +106,12 @@
                 },
                 "markdown-toc.withLinks": {
                     "type": "boolean",
-                    "default": true,
+                    "default": false,
                     "description": "Auto insert link."
                 },
                 "markdown-toc.orderedList": {
                     "type": "boolean",
-                    "default": false,
+                    "default": true,
                     "description": "Use ordered list (1. ..., 2. ...)."
                 },
                 "markdown-toc.bulletCharacter": {

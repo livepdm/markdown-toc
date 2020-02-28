@@ -1,8 +1,8 @@
 {
     "name": "auto-markdown-toc-ax1",
-    "displayName": "Auto Markdown TOC By AX1",
-    "description": "Markdown TOC (Table Of Contents) Plugin for Visual Studio Code.",
-    "version": "1.0.0",
+    "displayName": "Auto Markdown TOC Forked By AX1",
+    "description": "Markdown TOC (Table Of Contents) Plugin for Visual Studio Code. forked from huntertran/markdown-toc",
+    "version": "3.0.3",
     "preview": true,
     "icon": "img/markdown-toc.png",
     "license": "MIT",

@@ -5,7 +5,8 @@
         "outDir": "out",
         "sourceMap": true,
         "strict": true,
-        "rootDir": "src"
+        "rootDir": "src",
+        "forceConsistentCasingInFileNames": true,
     },
     "exclude": [
         "node_modules",

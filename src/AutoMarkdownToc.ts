@@ -64,7 +64,7 @@ export class AutoMarkdownToc {
                 autoMarkdownToc.deleteAnchors(editBuilder);
             }
 
-            if (this.configManager.options.DETECT_AUTO_SET_SECTION.value && this.configManager.options.isOrderedListDetected) {
+            if (this.configManager.options.DETECT_AUTO_SET_SECTION.value) { // } && this.configManager.options.isOrderedListDetected) {
                 autoMarkdownToc.updateHeadersWithSections(editBuilder, headerList, document);
 
                 //rebuild header list, because headers have changed
@@ -102,7 +102,11 @@ export class AutoMarkdownToc {
                 editBuilder.insert(new Position(header.range.start.line, 0), this.configManager.options.lineEnding);
             }
 
-            editBuilder.replace(header.range, header.fullHeaderWithOrder);
+            if (this.configManager.options.ORDERED_LIST.value) {
+                editBuilder.replace(header.range, header.fullHeaderWithOrder);
+            } else {
+                editBuilder.replace(header.range, header.fullHeaderWithoutOrder);
+            }
         });
     }
 

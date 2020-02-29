@@ -5,6 +5,7 @@ Generate TOC (table of contents) of headlines from parsed [markdown](https://en.
 
 [![Marketplace Version](https://vsmarketplacebadge.apphb.com/version/huntertran.auto-markdown-toc.svg)](https://marketplace.visualstudio.com/items?itemName=huntertran.auto-markdown-toc)
 [![Rating](https://vsmarketplacebadge.apphb.com/rating/huntertran.auto-markdown-toc.svg)](https://marketplace.visualstudio.com/items?itemName=huntertran.auto-markdown-toc)
+![Node CI](https://github.com/huntertran/markdown-toc/workflows/Node%20CI/badge.svg)
 
 <!-- TOC -->
 
@@ -107,6 +108,7 @@ If you want to use a unique setting for a file, you can add attributes to `<!-- 
 - zhiguang Wang(Fix: Recognized code to header list)
 - jgroom33 (Fix: Codeblock error)
 - satokaz (Fix: Codeblock error)
+- [mwhebert:](https://github.com/mwhebert) issue [#20](https://github.com/huntertran/markdown-toc/issues/20)
 
 # 6. What's New?
 <a id="markdown-whats-new" name="whats-new"></a>
